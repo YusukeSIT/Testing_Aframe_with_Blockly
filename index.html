@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aframe-withBlockly</title>
+    <script src="scripts/aframe.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+
+  <body>
+    <!-- ヘッダー -->
+    <header id="header">
+    </header>
+    <!-- ヘッダーここまで -->
+
+    <!-- メインコンテンツ -->
+    <div id="mainWrapper">
+      
+      <!-- 左半分 Blocklyエリア -->
+      <div id="blocklyArea">
+        <div id="blocklyDiv" style="width: 100%; height: 90%">
+        </div>
+        <button id="apply">apply & preview</button>
+      </div>
+      <!-- Blocklyエリアここまで -->
+
+      <!-- 右半分 Aframeエリア　-->
+      <div id="aframeArea">
+        <a-scene id='paneledAscene' embedded inspector="url: scripts/aframe-inspector.js" vr-mode-ui='enabled: false'>
+          
+        </a-scene>
+      </div>
+      <!-- Aframeエリアここまで -->
+
+    </div>
+    <!-- メインコンテンツここまで -->
+
+
+
+
+    <xml id="startBlocks" style="display: none">
+      <block type="scene_block">
+        <statement name="SCENE">
+          <block type="room_block">
+            <field name="room_size">MEDIUM</field>
+            <statement name="CONTENT">
+              
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </xml>
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/msg/en.js"></script>
+    <script src="scripts/aframe_blocks.js"></script>
+    <script src="scripts/scene_maker.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+  </body>
+</html>
