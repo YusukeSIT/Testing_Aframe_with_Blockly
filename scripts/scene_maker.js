@@ -56,8 +56,24 @@ javascript.javascriptGenerator.forBlock['box_block'] = function(block, generator
   value_size_z = value_size_z.replace(/\(/, '');
   value_size_z = value_size_z.replace(/\)/, '');
 
+  //  ブロックから傾きを読み取る
+  let value_rot_x = generator.valueToCode(block, 'rot_x', javascript.Order.ATOMIC);
+  value_rot_x = value_rot_x.replace(/\(/, '');
+  value_rot_x = value_rot_x.replace(/\)/, '');
+
+  let value_rot_y = generator.valueToCode(block, 'rot_y', javascript.Order.ATOMIC);
+  value_rot_y = value_rot_y.replace(/\(/, '');
+  value_rot_y = value_rot_y.replace(/\)/, '');
+
+  let value_rot_z = generator.valueToCode(block, 'rot_z', javascript.Order.ATOMIC);
+  value_rot_z = value_rot_z.replace(/\(/, '');
+  value_rot_z = value_rot_z.replace(/\)/, '');
+
 　//  <a-box> を作成
-  let code = "<a-box id='" + block.id +"' class='generated' position='" + value_pos_x + " " + value_pos_y + " " + value_pos_z + "' scale='" + value_size_x + " " + value_size_y + " " + value_size_z + "'>\n";
+  let code = "<a-box id='" + block.id +"' class='generated'" + 
+    " position='" + value_pos_x + " " + value_pos_y + " " + value_pos_z + 
+    "' scale='" + value_size_x + " " + value_size_y + " " + value_size_z + 
+    "' rotation='" + value_rot_x + " " + value_rot_y + " " + value_rot_z + "'>\n";
   //  数値の表現をa-frame仕様に修正
   code = code + "</a-box>";
 
